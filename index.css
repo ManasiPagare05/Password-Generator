@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(210, 210, 6, 1) 0%, rgba(238, 130, 238, 1) 100%);
+}
+
+.container{
+    width: 90%;
+    max-width: 300px;
+}
+
+h1{
+    text-align: center;
+    color: rgb(245, 245, 245);
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    word-spacing: 2px;
+    line-height: 1.5;
+}
+
+.display-container{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.408);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1rem 0;
+    margin-top: 0.35rem;
+    border-bottom: .35rem solid peru;
+ 
+}
+
+.display{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+    font-weight: bold; 
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: 0px;
+    outline: none;
+}
+
+.display::placeholder{
+    position: absolute;
+    color: rgb(18, 221, 235);
+    top:5px;
+    font-size: 16px;
+}
+
+.display-container button{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 1.2rem;
+    padding: 5px;
+    transform: translateY(0.20rem);
+    background-color: white;
+    color: rgb(34, 224, 227);
+    border: none;
+}
+
+.input-container{
+    background-color: rgba(0, 0, 0, 0.408) ;
+    border-radius: 7px;
+    padding: 15px;
+    color: aliceblue;
+    border-bottom: .35rem solid peru;
+}
+
+.length-container{
+    display: flex;
+    gap: 130px;
+    margin-bottom: 1rem;
+}
+
+[data-lengthNumber]{
+    color: rgb(79, 248, 79);
+}
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:1rem 0rem;
+    color: rgba(255, 255, 0, 0.825);
+    letter-spacing:1px;
+}
+
+[data-indicator]{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+
+.generatorBtn{
+    width: 100%;
+    padding: 15px;
+    color: rgba(255, 255, 0, 0.832);
+    background-color: rgb(125, 7, 144);
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.generatorBtn:hover{
+    cursor: pointer;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    gap:0 1rem ;
+    margin:1rem 0;
+}
+
+.check input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(36, 252, 209);
+    border-radius: 0.35rem;
+    cursor: pointer;
+    position: relative;   
+}
+
+.check input:checked{
+    background-color: rgb(101, 235, 219);
+}
+
+.check input:checked::before{
+    content: '✓';
+    position: absolute;
+    color: rgb(5, 11, 15);
+    font-size:1.15rem ;
+    font-weight: 600;
+    left: 4px;
+    bottom: 1px;
+}
+
+.slider{
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(245, 161, 64);   
+}
+
+.slider::-webkit-slider-thumb{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover{
+    outline: 2px solid yellow;
+    background-color: rgba(0, 0, 0, 0.866);
+    box-shadow: 0px 0px 25px 25px rgba(255, 255, 0, 0.188);
+}
+
+.slider:focus{
+    border: 2px solid yellow;
+}
+
+
+.tooltip{
+    position:absolute;
+    background-color: rgb(52, 231, 237);
+    color: rgb(32, 31, 31);
+    font-size: 0.75rem;
+    top: -35px;
+    left: -15px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.tooltip.active{
+    opacity: 1;
+    transform: scale(1);
+}
